@@ -114,6 +114,23 @@ export function WMS(map){
   return maplayer;
 }
 
+export function WMSmap(map){
+  var maplayer = new WMSLayer({
+    source: new ImageWMS({
+        url: 'http://localhost:8090/geoserver/cite/wms',
+        params: {
+            'LAYERS': 'cite:province', //此处可以是单个图层名称，也可以是图层组名称，或多个图层名称  
+            'VERSION': '1.1.0',
+            'TILED': false
+        },
+        ratio: 1.5,
+        serverType: 'geoserver' //服务器类型                  
+    })
+  })
+  map.addLayer(maplayer)
+  return maplayer;
+}
+
 // 加载热力图
 export function showHeatMap(map){
     let heatMapLayer = new HeatmapLayer({

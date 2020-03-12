@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="map-box">
        <Map class="map" ref="map" zoom='6' :center="center" :isShowBaseMap="true" :isScaleLine="true"></Map>
        <!-- <div id="mouse-position"></div> -->
   </div> 
@@ -60,5 +60,12 @@ export default {
 </script>
 
 <style scoped>
-
+.map-box{
+  height: 100%;
+  width: 100%;
+}
+.map{
+  height: 100%;
+  width: 100%
+}
 </style>>

@@ -10,7 +10,7 @@ import Map from '../../components/map/index'
 import {tiandituVetorMap}from '../../Utils/ol/mapServer'
 import {WMS} from '../../Utils/ol/mapServer'
 import {setMapCenter} from '../../Utils/ol/mapOperate'
-// import {addPoint}from '../../Utils/ol/feature'
+import {addPoint}from '../../Utils/ol/feature'
 export default {
   data () {
     return {
@@ -26,7 +26,7 @@ export default {
     tiandituVetorMap(map)
     WMS(map)
     setMapCenter(map, [112.3,32.21])
-    //  addPoint(map,[112.3,32.21],"/images/banner.jpg")
+     addPoint(map,[112.3,32.21],"../../assets/images/default-avator.jpg")
   }
 }
 </script>

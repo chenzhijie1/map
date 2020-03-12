@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+const routerPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error=> error)
+}
 Vue.use(Router)
 // 项目整体框架
-import Layout from "@/views/dasboard/index"
+import Layout from '@/views/dasboard/index'
 // 项目左侧菜单框架
-import LeftLayout from "@/views/leftMenuDashboard/index"
+import LeftLayout from '@/views/leftMenuDashboard/index'
 const router = new Router({
     routes: [              //配置路由，这里是个数组
         {
@@ -15,7 +18,7 @@ const router = new Router({
         },
         {
             path: '/login',
-            component: ()=>import("@/views/login/index"),
+            component: () => import ("@/views/login/index"),
             hidden: true
         },
         {

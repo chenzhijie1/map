@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="map-box">
        <Map class="map" ref="map" zoom='6' :center="center" :isShowBaseMap="true" :isScaleLine="true"></Map>
        <div id="mouse-position"></div>
   </div> 
