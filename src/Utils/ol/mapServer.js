@@ -45,8 +45,6 @@ export function tiandituVetorMap(map){
             
         }),
     });
-
-    console.log("+++------++++")
     // 添加到地图上
     map.addLayer(TiandiMap_vec);
     map.addLayer(TiandiMap_cva);

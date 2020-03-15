@@ -101,7 +101,12 @@ const router = new Router({
                         path: '/menu2/menu2',
                         meta: { title: '地图定位和当前域', icon: 'link' },
                         component: () => import('@/views/user/roles'),
-                   }]
+                   },{
+                    path: '/menu2/menu3',
+                    meta: { title: '地图', icon: 'link' },
+                    component: () => import('@/views/user/overlay'),
+                   }
+                ]
                 },
             ]
         },

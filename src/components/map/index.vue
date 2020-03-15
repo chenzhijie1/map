@@ -6,18 +6,13 @@
 <script>
 // 映入css文件、
 import "ol/ol.css";
-// import "../utils/openlayers/css/OverviewMap.css";
 import Map from "ol/Map.js";
-// import Overlay from "ol/Overlay";
 import View from "ol/View.js";
-// import TileLayer from "ol/layer/Tile.js";
-// import XYZ from "ol/source/XYZ";
 // 比例尺
 import ScaleLine from "ol/control/ScaleLine";
 // 地图服务
 import {
-  tiandituVetorMap,
-//   tiandituImgMap
+  tiandituVetorMap
 } from "../../Utils/ol/mapServer";
 export default {
   props: ["zoom", "center", "isShowBaseMap", "isScaleLine"],

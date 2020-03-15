@@ -8,6 +8,12 @@
     email: <input v-model="user.email"/>
     <p><input type="submit" value="添加用户"/></p>
     </form>
+    <h2>从页面上直接获取的值：{{this.$store.state.count}}</h2>
+    <h2>从getter获取的计算后的值：{{this.$store.getters.getStateCount}}</h2>
+    <p>count的值：{{this.$store.state.count}}</p>
+    <button @click="addFun">+</button>
+    <button @click="reduceFun">-</button>
+   <div style="border: 1px solid red;margin-top:50px;">{{count1}}</div>
     <Mapview
       class="map"
       ref="map"
@@ -31,7 +37,7 @@ import { setMapZoom } from "../../Utils/ol/mapOperate";
 import View from "ol/View.js";
 import TileLayer from "ol/layer/Tile.js";
 import TileWMS from "ol/source/TileWMS.js";
-
+import {mapState,mapActions,mapGetters} from 'vuex';
 export default {
   name: "users",
   data() {
@@ -65,6 +71,11 @@ export default {
   components: {
     Mapview
   },
+  computed:{
+      ...mapState({
+          count1:state=>state.count
+      })
+  },
   mounted:function() {
     var map = this.$refs.map.map;
     tiandituVetorMap(map);
@@ -75,7 +86,6 @@ export default {
   },
   methods: {
     mapClick: function(evt) {
-     alert(123)
      console.log(map)
      var coordinate = evt.coordinate;
      var features = this.map.getFeaturesAtPixel(evt.pixel);
@@ -92,6 +102,14 @@ export default {
     },
     deleteUser: function(index){
       this.users.splice(this.users.indexOf(index), 1)
+    },
+    addFun(){
+        // this.$store.commit("add")
+        this.$store.dispatch("add")
+    },
+    reduceFun(){
+        //this.$store.commit("reduce")
+        this.$store.dispatch("reduce")
     }
   }
 };

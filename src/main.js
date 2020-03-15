@@ -14,7 +14,6 @@ import '@/assets/css/map_ol.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
-
 Vue.config.productionTip = false
 
 // 订阅模式进行非父子组件数据传值

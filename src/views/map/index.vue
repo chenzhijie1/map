@@ -6,9 +6,9 @@
 
 <script>
 import Map from '../../components/map/index'
-// import {tiandituVetorMap}from '../../Utils/ol/mapServer'
-// import {setMapCenter}from '../../Utils/ol/mapOperate'
-// import {addPoint}from '../../Utils/ol/feature'
+import {tiandituVetorMap}from '../../Utils/ol/mapServer'
+import {setMapCenter}from '../../Utils/ol/mapOperate'
+import {addPoint}from '../../Utils/ol/feature'
 export default {
   data(){
     return{
@@ -22,9 +22,9 @@ export default {
      var map = this.$refs.map.map
      console.log("++++",map)
      
-    //  tiandituVetorMap(map)
-    //  setMapCenter(map,[112.3,32.21])
-    //  addPoint(map,[112.3,32.21],"/images/banner.jpg")
+     tiandituVetorMap(map)
+     setMapCenter(map,[112.3,32.21])
+     addPoint(map,[112.3,32.21],"/images/banner.jpg")
   }
 }
 </script>
