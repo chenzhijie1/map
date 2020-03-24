@@ -5,7 +5,7 @@ import App from './App.vue'
 import router from './router/index'
 // 引入vuex
 import store from './store/index'
-
+import axios from "axios";
 // 引入全局css文件
 import '@/assets/css/base.css'
 import '@/assets/css/map_ol.css'
@@ -14,6 +14,8 @@ import '@/assets/css/map_ol.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
+Vue.prototype.$axios = axios
+//阻止启动生产消息
 Vue.config.productionTip = false
 
 // 订阅模式进行非父子组件数据传值

@@ -4,7 +4,7 @@
   </div> 
 </template>
 <script>
-// 映入css文件、
+// 映入css文件
 import "ol/ol.css";
 import Map from "ol/Map.js";
 import View from "ol/View.js";
