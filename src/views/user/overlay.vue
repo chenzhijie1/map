@@ -29,8 +29,9 @@
 <script>
 //点击地图，通过GetFeatureInfo实现要素信息查询
 import Mapview from "../../components/map/index";
-import { tiandituVetorMap } from "../../Utils/ol/mapServer";
-import { WMSmap } from "../../Utils/ol/mapServer";
+// import { tiandituVetorMap } from "../../Utils/ol/mapServer";
+import { MapServer } from "../../Utils/ol/test";
+// import { WMSmap } from "../../Utils/ol/mapServer";
 import { setMapCenter } from "../../Utils/ol/mapOperate";
 import { setMapZoom } from "../../Utils/ol/mapOperate";
 // import Map from "ol/Map.js";
@@ -78,8 +79,15 @@ export default {
   },
   mounted:function() {
     var map = this.$refs.map.map;
-    tiandituVetorMap(map);
-    WMSmap(map);
+    MapServer.tiandituVetorMap(map);
+    let url = 'http://localhost:8090/geoserver/cite/wms';
+    let params = {
+              'LAYERS': 'cite:province', //此处可以是单个图层名称，也可以是图层组名称，或多个图层名称  
+              'VERSION': '1.1.0',
+              'TILED': false
+          };
+    MapServer.WMSmap(map,url,params);
+    MapServer.hello();
     setMapCenter(map, [112.3, 32.21]);
     setMapZoom(map,4);
     map.on("click", this.mapClick);
