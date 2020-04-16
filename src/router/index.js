@@ -198,6 +198,14 @@ const router = new Router({
             {
               path: '/menu2/menu9',
               meta: {
+                title: '自定义控件',
+                icon: 'link'
+              },
+              component: () => import('@/views/user/icon1'),
+            },
+            {
+              path: '/menu2/menu10',
+              meta: {
                 title: '标记图标',
                 icon: 'link'
               },

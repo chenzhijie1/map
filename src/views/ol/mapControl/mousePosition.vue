@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import Map from '../../../components/map/index'
+// const Map = () => import('../../../components/map/index')
+import Map from '../../../components/map/index';
 import MousePosition from 'ol/control/MousePosition';
 import {createStringXY} from "ol/coordinate"
 export default {
