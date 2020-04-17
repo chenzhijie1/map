@@ -75,11 +75,7 @@ export default {
   },
   methods: {
     mapClick: function(evt) {
-     alert(123)
-     console.log(map)
      var coordinate = evt.coordinate;
-     var features = this.map.getFeaturesAtPixel(evt.pixel);
-    
     },
     addUser: function(e){
       this.users.push({

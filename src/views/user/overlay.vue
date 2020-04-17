@@ -93,11 +93,9 @@ export default {
     map.on("click", this.mapClick);
   },
   methods: {
-    mapClick: function(evt) {
-     console.log(map)
+    mapClick: function(evt) { 
      var coordinate = evt.coordinate;
-     var features = this.map.getFeaturesAtPixel(evt.pixel);
-    
+     console.log(coordinate)
     },
     addUser: function(e){
       this.users.push({
