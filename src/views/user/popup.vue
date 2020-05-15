@@ -6,8 +6,7 @@
       <div id="popup-content"></div>
     </div>
   </div>
-    
-    </div>
+</div>
 </template>
 <script>
 import 'ol/ol.css';
